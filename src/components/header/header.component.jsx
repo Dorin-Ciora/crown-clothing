@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
+import ShoppingItems from '../cart-items/cart-items.component';
 import { auth } from '../../assets/firebase/firebase.utils';
  
 import './header.styles.scss';
@@ -17,6 +18,7 @@ const Header = ({ currentUser }) => (
             {
                 currentUser ? <div className='option' onClick={() => auth.signOut()}>SIGN OUT</div> : <Link className='option' to='/signIn'>SIGN IN</Link>
             }
+            <ShoppingItems />
         </div>
     </div>
 );
